@@ -1,0 +1,22 @@
+{
+  "name": "druckwelt-erding-anfrage-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Anfrage- und Upload-Backend für druckwelt-erding.de: nimmt Anfragen mit Dateien entgegen, legt sie ab und verteilt sie an E-Mail, Webhook (z. B. n8n) und später das interne Auftragsprogramm.",
+  "type": "module",
+  "main": "src/index.js",
+  "engines": {
+    "node": ">=20.11"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch --env-file-if-exists=.env src/index.js",
+    "redispatch": "node --env-file-if-exists=.env src/cli/redispatch.js",
+    "test": "node --test \"test/**/*.test.js\""
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "multer": "^2.0.2",
+    "nodemailer": "^6.10.1"
+  }
+}
